@@ -1,0 +1,8 @@
+*.sh
+*.bash
+*.a
+*.swp
+tes*
+*.out
+*.o
+hsh
