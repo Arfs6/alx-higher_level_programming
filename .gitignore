@@ -2,6 +2,7 @@
 *.bash
 *.a
 *.swp
+temp
 tes*
 *.out
 *.o
