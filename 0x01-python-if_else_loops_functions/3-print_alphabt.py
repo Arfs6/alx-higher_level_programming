@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-for i in range(99):
-    print("{:d} = 0x{:x}".format(i, i))
-
+for i in range(97, 123):
+    if i == 101 or i == 113:
+        continue
+    print("{:c}".format(i), end='')
