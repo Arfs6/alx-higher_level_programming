@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * insert-node - insert a new node in a sorted link list
+ * insert_node - insert a new node in a sorted link list
  * @head: pointer to first element in list
  * @number: n part of struct
  *
@@ -30,7 +30,6 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		new->next = current;
 		*head = new;
-		
 	}
 
 	while (current->next)
