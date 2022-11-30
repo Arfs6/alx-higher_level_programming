@@ -34,7 +34,7 @@ listint_t *insert_node(listint_t **head, int number)
 
 	while (current->next)
 	{
-		if (number < current->next->n)
+		if (number <= current->next->n)
 			break;
 		current = current->next;
 	}
