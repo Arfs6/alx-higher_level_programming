@@ -6,7 +6,7 @@ def test():
     """ test if the add function is working """
     a = 1
     b = 2
-    print(f"{a} + {b} = {add(a, b)}")
+    print("{} + {} = {}".format(a, b, add(a, b))
 
 
 # execute only if file is not imported
