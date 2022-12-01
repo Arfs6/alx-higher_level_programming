@@ -10,11 +10,9 @@ def run():
         print("0 arguments.")
         return
 
-    idx = 0
+    idx = 1
+    del argv[0]
     for arg in argv:
-        if idx == 0:
-            idx += 1
-            continue
         print("{:d}: {:s}".format(idx, arg))
         idx += 1
 
