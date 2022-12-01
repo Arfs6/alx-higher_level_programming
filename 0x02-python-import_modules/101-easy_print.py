@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-# testing...
-exec("print('#pythoniscool')")
+str = "print('#pythoniscool')"
+exec(str)
