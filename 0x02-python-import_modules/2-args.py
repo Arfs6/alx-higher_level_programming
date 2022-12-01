@@ -10,12 +10,12 @@ def run():
         print("0 arguments.")
         return
 
-    del argv[0]
-    if len(argv) == 1:
+    if argc == 2:
         print("1 argument")
     else:
-        print("{:d} arguments".format(len(argv)))
+        print("{:d} arguments".format(argc - 1))
     idx = 1
+    del argv[0]
     for arg in argv:
         print("{:d}: {:s}".format(idx, arg))
         idx += 1
