@@ -3,7 +3,7 @@ import calculator_1 as calc
 
 
 def run():
-    """add, sub, mul and div 10 and 5"""
+    """add, Sub, mul and div 10 and 5"""
     a = 10
     b = 5
     print("{:d} + {:d} = {:d}".format(a, b, calc.add(a, b)))
