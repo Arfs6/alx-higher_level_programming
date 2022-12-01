@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import argparse as ap
+from argparse import ArgumentParser
 
 
 def run():
     """print arguments the file was called with"""
-    parser = ap.ArgumentParser(
+    parser = ArgumentParser(
             description="pass me arguments and i will print it for you :)"
             )
     parser.add_argument("args", nargs="*")
