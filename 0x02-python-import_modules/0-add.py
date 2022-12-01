@@ -9,6 +9,6 @@ def test():
     print(f"{a} + {b} = {add(a, b)}")
 
 
-#execute only if file is not imported
+# execute only if file is not imported
 if __name__ == "__main__":
     test()
