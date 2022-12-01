@@ -11,9 +11,9 @@ def run():
         return
 
     if argc == 2:
-        print("1 argument")
+        print("1 argument:")
     else:
-        print("{:d} arguments".format(argc - 1))
+        print("{:d} arguments:".format(argc - 1))
     idx = 1
     del argv[0]
     for arg in argv:
