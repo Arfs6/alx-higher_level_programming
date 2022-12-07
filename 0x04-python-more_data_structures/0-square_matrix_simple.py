@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def square_matrix_simple(matrix=[]):
     """find the squares of all values in the matrix passed
     param:
