@@ -12,7 +12,7 @@ def magic_calculation(a, b):
                 result = result + (a ** b) / i
         except Exception:
             result = a + b
-            break
+            # break
 
 
     return result
