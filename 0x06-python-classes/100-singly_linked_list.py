@@ -13,8 +13,8 @@ class Node:
             data: integer to store in node
             next_node: next node in list
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -24,7 +24,7 @@ class Node:
     @data.setter
     def data(self, value):
         """set's a new value of a data"""
-        if not isinstance(data, int):
+        if not isinstance(value, int):
             raise(TypeError('data must be an integer'))
         self.__data = value
 
