@@ -9,9 +9,9 @@ class Square:
         """initialize a new square instance"""
         self.size = size
 
-        @property
-        def size(self):
-            return self.__size
-
-    @size.setter(self, size):
+    @property
+    def size(self):
+        return self.__size
+    @size.setter
+    def size(self, size):
         self.__size = size
