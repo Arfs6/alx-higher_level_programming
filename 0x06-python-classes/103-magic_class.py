@@ -9,7 +9,7 @@ import math
 class MagicClass:
     """reversing a python bytecode"""
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """initialize the magic class"""
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
