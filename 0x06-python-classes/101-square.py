@@ -76,10 +76,9 @@ class Square:
         for i in range(self.__position[1]):
             str += newLine
         for i in range(self.__size):
-            if i + 1 == self.__size:
-                newLine = ''
-            row = "{}{}{}".format(' ' * self.__position[0], '#' * self.__size,
-                    newLine)
+            row = "{}{}".format(' ' * self.__position[0], '#' * self.__size)
+            if i + 1 != self.__size:
+                row += '\n'
             str += row
 
         return str
