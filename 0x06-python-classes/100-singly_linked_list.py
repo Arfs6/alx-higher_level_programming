@@ -95,8 +95,11 @@ class SinglyLinkedList:
             return str
 
         node = self.__head
+        newLine = '\n'
         while node:
-            str += "{}\n".format(node.data)
+            if not node.next_node:
+                newLine = ''
+            str += "{}{}".format(node.data, newLine)
             node = node.next_node
 
         return str
