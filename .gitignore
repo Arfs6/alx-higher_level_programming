@@ -3,8 +3,7 @@
 *.bash
 *.a
 *.swp
-temp
-tes*
+temp*
 *.out
 *.o
 hsh
