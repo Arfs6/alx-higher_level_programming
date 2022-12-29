@@ -5,7 +5,7 @@ Write a function that returns a key with the biggest integer value.
 
 
 def best_score(a_dictionary):
-    if a_dictionary is None:
+    if not a_dictionary:
         return None
     _max = None
     ans = ''
@@ -15,7 +15,7 @@ def best_score(a_dictionary):
             ans = key
             continue
         if _max < a_dictionary[key]:
-         _max = a_dictionary[key]
-         ans = key
+            _max = a_dictionary[key]
+            ans = key
 
     return ans
