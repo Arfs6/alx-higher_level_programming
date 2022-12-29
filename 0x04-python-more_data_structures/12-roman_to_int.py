@@ -13,8 +13,9 @@ def roman_to_int(roman_string):
     if not isinstance(roman_string, str) or not roman_string:
         return 0
 
-    roman_dict = {'C': 100, 'M': 1000, 'X': 10, 'I': 1, 'V': 5, 'L': 50, 'D':
-            500}
+    roman_dict = {
+        'C': 100, 'M': 1000, 'X': 10, 'I': 1, 'V': 5, 'L': 50, 'D': 500
+    }
     ans, hold = (0, 0)
     prevNum = None
     for curNum in roman_string:
@@ -31,7 +32,7 @@ def roman_to_int(roman_string):
             hold = roman_dict[curNum]
             prevNum = roman_dict[curNum]
             continue
-        
+
         # prevNum must be less than curNun
         ans -= hold
         hold = roman_dict[curNum]
