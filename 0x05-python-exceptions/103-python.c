@@ -109,13 +109,14 @@ void print_python_float(PyObject *p)
 
 	fval = ((PyFloatObject *)p)->ob_fval;
 	printf("  value: ");
-	sprintf(str, "%f", fval);
+	sprintf(str, "%#.15g", fval);
 	dec = strstr(str, ".");
 	len = strlen(dec);
 	len--;
-	/* printf("str = %s\ndec = %s\nlen = %i\n", str, dec, len); */
 	for (len = len; len > 1; len--)
 	{
+		if (dec[len] == '\0' && dec[len - 1] != '0')
+			break;
 		if (dec[len] == '0')
 			dec[len] = '\0';
 		if (dec[len - 1] != '0')
