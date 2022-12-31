@@ -74,7 +74,7 @@ void print_python_bytes(PyObject *p)
 	str = ((PyBytesObject *)p)->ob_sval;
 	printf("  trying string: %s\n", str);
 
-	if (len > 10)
+	if (len >= 10)
 		len = 10;
 	else
 		len++;
