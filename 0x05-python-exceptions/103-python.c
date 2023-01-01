@@ -95,8 +95,7 @@ void print_python_bytes(PyObject *p)
 void print_python_float(PyObject *p)
 {
 	double fval;
-	char str[64], *dec;
-	int len;
+	char *buf = NULL;
 
 	fflush(stdout);
 
@@ -108,21 +107,11 @@ void print_python_float(PyObject *p)
 	}
 
 	fval = ((PyFloatObject *)p)->ob_fval;
-	printf("  value: ");
-	sprintf(str, "%#.15g", fval);
-	dec = strstr(str, ".");
-	len = strlen(dec);
-	len--;
-	for (len = len; len > 1; len--)
-	{
-		if (dec[len] == '\0' && dec[len - 1] != '0')
-			break;
-		if (dec[len] == '0')
-			dec[len] = '\0';
-		if (dec[len - 1] != '0')
-			break;
-	}
-	printf("%s\n", str);
+
+	buf = PyOS_double_to_string(fval, 'r', 0,  
+			Py_DTSF_ADD_DOT_0, NULL);  
+	printf("  value: %s\n", buf);
+	PyMem_Free(buf);  
 }
 
 /**
