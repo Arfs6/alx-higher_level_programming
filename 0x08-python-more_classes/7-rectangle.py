@@ -15,6 +15,25 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = '#'
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Returns the bigger rectangle
+
+        Parameter:
+        - rect_1: first rectangle instance
+        - rect_2: second Rectangle instance to compare with
+
+        Raises:
+        - TypeError: invalid parameters
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise(TypeError("rect_1 must be an instance of Rectangle"))
+        elif not isinstance(rect_2, Rectangle):
+            raise(TypeError("rect_2 must be an instance of Rectangle"))
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
+
     def __init__(self, width=0, height=0):
         """Initialize the rectangle Object
 
