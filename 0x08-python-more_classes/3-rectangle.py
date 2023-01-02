@@ -10,7 +10,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """Initialize the rectangle Object
 
-        Parameter: 
+        Parameter:
         - width: width of the rectangle
         - height: height of the rectangle
 
@@ -55,7 +55,11 @@ class Rectangle:
 
     def perimeter(self):
         """Returns the perimeter of the rectangle"""
-        return 2 * (self.__height + self.__width) if self.__height > 0 and self.__width > 0 else 0
+        if self.__height > 0 and self.__width > 0:
+            result = 2 * (self.__height + self.__width)
+        else:
+            result = 0
+        return result
 
     def __str__(self):
         """Returns a representation of the rectangle on a 2D plane"""
