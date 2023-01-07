@@ -5,4 +5,5 @@ Write an empty class Rectangle that defines a simple rectangle:
 
 
 class Rectangle:
+    """A class representing a rectangle"""
     pass
