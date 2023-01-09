@@ -28,9 +28,10 @@ def run():
         # print(i)
         chessBoard[0][i] = True
         result = checkQueen(1, chessBoard)
+        # check queens starting from second row
         if result:
             printResult(chessBoard)
-        chessBoard = generateChessBoard()
+        chessBoard = generateChessBoard()  # get a new chess board
 
 
 def checkQueen(row, chessBoard):
@@ -46,12 +47,13 @@ def checkQueen(row, chessBoard):
     if row == size:
         return True
 
+    # check for each column
     for column in range(size):
         if validateQueen(chessBoard, (column, row)):
-            chessBoard[row][column] = True
-            if checkQueen(row + 1, chessBoard):
+            chessBoard[row][column] = True  # activate
+            if checkQueen(row + 1, chessBoard):  # start recursion
                 return True
-        chessBoard[row][column] = False
+        chessBoard[row][column] = False  # deactivate
 
     return False
 
@@ -75,6 +77,7 @@ def validateQueen(chessBoard, point):
     if not all(not chessBoard[i][column] for i in range(row)):
         # print(f'collission in column {column}')
         return False  # collision!
+
     # test left diagonal
     x_points = [x for x in range(column - 1, -1, -1)]
     y_points = [y for y in range(row - 1, -1, -1)]
@@ -83,12 +86,13 @@ def validateQueen(chessBoard, point):
         # print("right collision")
         return False
 
+    # test right diagonal
     x_points = [x for x in range(column + 1, size)]
     mapList = list(map(testFunc, y_points, x_points))
     if not all(not i for i in mapList):
         return False
 
-    return True
+    return True  # all columns have collissions
 
 
 def printResult(chessBoard):
