@@ -11,7 +11,7 @@ def read_file(filename=""):
     """
     if not filename:
         return
-    with open(filename, encoding='utf8') as f_obj:
+    with open(filename, 'r', encoding='utf8') as f_obj:
         text = f_obj.read()
 
     print(text)
