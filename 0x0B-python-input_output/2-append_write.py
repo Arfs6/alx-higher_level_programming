@@ -13,6 +13,6 @@ def append_write(filename="", text=""):
     number of characters writting
     """
     if not filename:
-            return
+        return
     with open(filename, 'a', encoding='utf8') as f_obj:
         return f_obj.write(text)
