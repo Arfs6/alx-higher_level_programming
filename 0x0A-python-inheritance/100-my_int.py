@@ -14,7 +14,7 @@ class MyInt(int):
     def __eq__(self, other):
         """Checks if self is not equal to other"""
         if not isinstance(self, MyInt):
-            return False
+            return True
         return self.real != other.real
 
     def __ge__(self, other):
