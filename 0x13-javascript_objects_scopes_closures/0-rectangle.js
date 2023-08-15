@@ -1,3 +1,5 @@
 #!/usr/bin/node
-exports.Rectangle = class {
+module.exports = class {
+  // constructor () {
+  // };
 };
