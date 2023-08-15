@@ -1,5 +1,2 @@
 #!/usr/bin/node
-module.exports = class {
-  constructor () {
-  };
-};
+module.exports = class {};
