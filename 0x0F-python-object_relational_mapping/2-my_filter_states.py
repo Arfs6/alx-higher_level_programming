@@ -16,7 +16,7 @@ def run():
     # Execute command
     query = "SELECT *\
             FROM states\
-            WHERE states.name LIKE '{}'\
+            WHERE BINARY states.name LIKE '{}'\
             ORDER BY states.id".format(stateName)
     cursor.execute(query)
 
