@@ -8,11 +8,16 @@ import sys
 def run():
     """Begin execution!"""
     user, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
-    db = MySQLdb.Connect(host='localhost', user=user, passwd=password, db=database)
+    db = MySQLdb.Connect(
+            host='localhost', user=user, passwd=password, db=database
+            )
     cursor = db.cursor()
 
     # Execute command
-    query = r"SELECT * FROM states WHERE states.name LIKE 'N%' ORDER BY states.id"
+    query = "SELECT *\
+            FROM states\
+            WHERE states.name LIKE 'N%'\
+            ORDER BY states.id"
     cursor.execute(query)
 
     # show results
