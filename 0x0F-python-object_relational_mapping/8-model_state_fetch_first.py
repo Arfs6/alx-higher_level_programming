@@ -21,7 +21,10 @@ def run():
     # execute query
     query = session.query(State).order_by(State.id)
     state = query.first()
-    print(f"{state.id}: {state.name}")
+    if type(state) == None:
+        print(Nothing)
+    else:
+            print(f"{state.id}: {state.name}")
 
 
 if __name__ == '__main__':

@@ -14,7 +14,7 @@ def run():
     cursor = db.cursor()
 
     # Execute command
-    query = "SELECT cities.id, cities.name, states.name AS states_name\
+    query = "SELECT cities.name\
             FROM cities\
             JOIN states ON cities.state_id = states.id\
             WHERE BINARY states.name LIKE ('{}')\
@@ -23,8 +23,14 @@ def run():
     cursor.execute(query)
 
     # show results
-    for row in cursor.fetchall():
-        print(row)
+    results = cursor.fetchall()
+    resultsStr = ''
+    for idx, row in enumerate(results):
+        if idx > 0:
+            resultsStr += ', '
+        resultsStr += row[0]
+
+    print(resultsStr)
 
     # clean up
     cursor.close()
