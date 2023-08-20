@@ -20,9 +20,10 @@ def run():
     session = Session()
 
     # execute query
-    query = session.query(City).join(State).order_by(City.id)
-    for city in query.all():
-        print(f"{city.state.name}: ({city.id}) {city.name}")
+    query = session.query(City, State.name).join(State).order_by(City.id)
+    # print(query.all())
+    for city, stateName in query.all():
+        print(f"{stateName}: ({city.id}) {city.name}")
 
 
 if __name__ == '__main__':
