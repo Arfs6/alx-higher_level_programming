@@ -17,7 +17,7 @@ def run():
     query = "SELECT cities.id, cities.name, states.name AS states_name\
             FROM cities\
             JOIN states ON cities.state_id = states.id\
-            WHERE states.name LIKE ('{}')\
+            WHERE BINARY states.name LIKE ('{}')\
             ORDER BY cities.id\
             ".format(stateName)
     cursor.execute(query)
