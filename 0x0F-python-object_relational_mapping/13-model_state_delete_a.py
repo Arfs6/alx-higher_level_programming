@@ -3,6 +3,7 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql import func
 
 from model_state import Base, State
 
@@ -20,8 +21,13 @@ def run():
 
     # execute query
     query = session.query(State).\
-        filter(State.name.like(r'%a%')).order_by(State.id)
-    session.delete(query.all())
+        filter(func.binary(State.name).like(r'%a%')).\
+        order_by(State.id)
+    results = query.all()
+    if not results:
+        return
+    for obj in results:
+        session.delete(obj)
     session.commit()
 
 
